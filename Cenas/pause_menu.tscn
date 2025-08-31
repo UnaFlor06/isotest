@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn4xj6ohgbrmg"]
 
 [ext_resource type="Script" uid="uid://dbubeeetedncx" path="res://Cenas/pause.gd" id="1_idnuk"]
-[ext_resource type="Theme" uid="uid://d4lklfp575014" path="res://assets/PreDefinicoes/FormatacaoBotao.tres" id="2_ddlpt"]
+[ext_resource type="Theme" uid="uid://d4lklfp575014" path="res://Assets/PreDefinicoes/FormatacaoBotao.tres" id="2_ddlpt"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3

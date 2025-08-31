@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://iw4ot757f7n8"]
 
-[ext_resource type="FontFile" uid="uid://c4djfkseq3ilc" path="res://assets/Fontes/fonts/connection_ii/ConnectionII.otf" id="1_7y7xk"]
+[ext_resource type="FontFile" uid="uid://c4djfkseq3ilc" path="res://Assets/Fontes/fonts/connection_ii/ConnectionII.otf" id="1_7y7xk"]
 [ext_resource type="Script" uid="uid://r1xl7in5bjax" path="res://Cenas/Menu/menu_principal.gd" id="1_w3ops"]
 [ext_resource type="PackedScene" uid="uid://duy2s7b1c6csy" path="res://Cenas/Menu/Botoes/jogar.tscn" id="2_w3ops"]
 

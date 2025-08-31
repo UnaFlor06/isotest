@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d4lklfp575014"]
+
+[ext_resource type="FontFile" uid="uid://c4djfkseq3ilc" path="res://assets/Fontes/fonts/connection_ii/ConnectionII.otf" id="1_evlm7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ddlpt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dokru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_adfkx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8514u"]
+
+[resource]
+Button/colors/font_focus_color = Color(0.822441, 0.436838, 0.853702, 1)
+Button/colors/font_hover_color = Color(0.69799, 0.152402, 0.769409, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.262745, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_evlm7")
+Button/styles/focus = SubResource("StyleBoxEmpty_ddlpt")
+Button/styles/hover = SubResource("StyleBoxEmpty_dokru")
+Button/styles/normal = SubResource("StyleBoxEmpty_adfkx")
+Button/styles/pressed = SubResource("StyleBoxEmpty_8514u")
