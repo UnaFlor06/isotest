@@ -1,13 +1,11 @@
 extends CanvasLayer
 
-@onready var Config_cena = preload("res://Cenas/Menu/Config2.tscn")
+@onready var Config_cena = preload("res://Cenas/Menu/Config.tscn")
 var instancia
 
 func _ready() -> void:
-	# instancia o Config
+	visible = false
 	instancia = Config_cena.instantiate()
-
-	# espera um frame para garantir que a cena principal já esteja carregada
 	call_deferred("_adicionar_config")
 
 func _adicionar_config():
@@ -36,4 +34,5 @@ func _on_configuração_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Cenas/Menu/MenuPrincipal.tscn")

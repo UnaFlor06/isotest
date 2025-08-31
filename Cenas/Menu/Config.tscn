@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg4el8ydl5odq"]
+
+[ext_resource type="Script" uid="uid://djadkucu8sycv" path="res://Cenas/Scripts/config_2.gd" id="1_3bbrb"]
+[ext_resource type="FontFile" uid="uid://c4djfkseq3ilc" path="res://Assets/Fontes/fonts/connection_ii/ConnectionII.otf" id="2_tw0n5"]
+[ext_resource type="PackedScene" uid="uid://duy2s7b1c6csy" path="res://Cenas/Menu/Botoes/jogar.tscn" id="3_112sr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5nsl"]
+bg_color = Color(0, 0, 0, 0.619608)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_3bbrb")
+
+[node name="Config" type="PanelContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -200.0
+offset_right = -150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5nsl")
+
+[node name="Texto" type="Label" parent="Config"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_tw0n5")
+theme_override_font_sizes/font_size = 30
+text = "Configurações"
+
+[node name="Botao" parent="Config" instance=ExtResource("3_112sr")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 15
+text = "Voltar"
+
+[connection signal="pressed" from="Config/Botao" to="." method="_on_botao_pressed"]

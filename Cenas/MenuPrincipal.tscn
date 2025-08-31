@@ -36,6 +36,7 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [node name="Control" type="TextureRect"]
+process_mode = 3
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
