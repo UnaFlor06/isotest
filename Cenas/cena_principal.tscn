@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://oixfveu3laly"]
+
+[ext_resource type="Script" uid="uid://cgt8k12i2tudm" path="res://Cenas/Scripts/Camera.gd" id="1_r8678"]
+[ext_resource type="PackedScene" uid="uid://cy2mp0etf8tgn" path="res://Cenas/Playerteste.tscn" id="2_q4qsu"]
+[ext_resource type="PackedScene" uid="uid://iwt5atomkn40" path="res://Cenas/mapa1.tscn" id="4_r8678"]
+[ext_resource type="PackedScene" uid="uid://dn4xj6ohgbrmg" path="res://Cenas/pause_menu.tscn" id="5_tgbm0"]
+[ext_resource type="PackedScene" uid="uid://b1lai46s4f8il" path="res://Cenas/bloco_atirador.tscn" id="6_ap3kr"]
+
+[node name="CenaPrincipal" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_r8678")
+
+[node name="Mapa" parent="." instance=ExtResource("4_r8678")]
+z_index = 1
+
+[node name="BlocoAtirador" parent="." instance=ExtResource("6_ap3kr")]
+y_sort_enabled = true
+position = Vector2(-57, 133)
+motion_mode = 1
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_q4qsu")]
+z_index = 1
+position = Vector2(-214, 417)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-18, 6)
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_tgbm0")]

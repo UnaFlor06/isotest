@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://duy2s7b1c6csy"]
+
+[ext_resource type="FontFile" uid="uid://k0t7f35kpegm" path="res://assets/Fontes/fonts/connection/ConnectionBold.otf" id="1_6tnt4"]
+
+[node name="Jogar" type="Button"]
+texture_filter = 1
+custom_minimum_size = Vector2(250, 0)
+offset_left = 369.0
+offset_top = 236.0
+offset_right = 427.0
+offset_bottom = 267.0
+theme_override_fonts/font = ExtResource("1_6tnt4")
+theme_override_font_sizes/font_size = 30
+text = "JOGAR"

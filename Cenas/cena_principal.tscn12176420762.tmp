@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://oixfveu3laly"]
+
+[ext_resource type="Script" uid="uid://cgt8k12i2tudm" path="res://Cenas/Scripts/Camera.gd" id="1_r8678"]
+[ext_resource type="Texture2D" uid="uid://c710hmxv01ial" path="res://assets/isometric-sandbox-32x32/isometric-sandbox-32x32/isometric-sandbox-sheet.png" id="1_rw51x"]
+[ext_resource type="PackedScene" uid="uid://cy2mp0etf8tgn" path="res://Cenas/Playerteste.tscn" id="2_q4qsu"]
+[ext_resource type="PackedScene" uid="uid://iwt5atomkn40" path="res://Cenas/mapa1.tscn" id="4_r8678"]
+[ext_resource type="Texture2D" uid="uid://cb0kd45bw1003" path="res://assets/light.jpg" id="5_tgbm0"]
+[ext_resource type="PackedScene" uid="uid://b1lai46s4f8il" path="res://Cenas/bloco_atirador.tscn" id="6_ap3kr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgbm0"]
+texture = ExtResource("1_rw51x")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+0:0/0/y_sort_origin = 1
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ap3kr"]
+tile_shape = 1
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_tgbm0")
+
+[node name="CenaPrincipal" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_r8678")
+distancia_maxima = null
+distancia_minima = null
+
+[node name="textura" type="Sprite2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.857501, 0.857501, 0.857501, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(664, 108)
+scale = Vector2(0.572112, 0.531708)
+color = Color(0.963055, 0.96683, 0.969445, 1)
+energy = 0.76
+texture = ExtResource("5_tgbm0")
+texture_scale = 1.21
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+position = Vector2(223, 97)
+tile_set = SubResource("TileSet_ap3kr")
+
+[node name="Mapa" parent="." instance=ExtResource("4_r8678")]
+z_index = 1
+
+[node name="BlocoAtirador" parent="." instance=ExtResource("6_ap3kr")]
+y_sort_enabled = true
+position = Vector2(-57, 133)
+motion_mode = 1
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_q4qsu")]
+z_index = 1
+position = Vector2(411, 482)

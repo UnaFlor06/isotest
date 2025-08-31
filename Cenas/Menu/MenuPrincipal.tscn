@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqql2wiwevrd0"]
+
+[ext_resource type="FontFile" uid="uid://d0dot7hqt64c8" path="res://assets/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/connection/Connection.otf" id="1_sgs44"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgs44"]
+font = ExtResource("1_sgs44")
+font_size = 64
+font_color = Color(0.529412, 0.290196, 0.788235, 0.909804)
+outline_size = 5
+outline_color = Color(0.118581, 0.118581, 0.118581, 1)
+shadow_size = 15
+
+[sub_resource type="SystemFont" id="SystemFont_7y7xk"]
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.5
+offset_top = 60.0
+offset_right = 223.5
+offset_bottom = 125.0
+grow_horizontal = 2
+text = "NOME DO JOGO"
+label_settings = SubResource("LabelSettings_sgs44")
+
+[node name="Jogar" type="Button" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 0
+offset_left = 334.0
+offset_top = 244.0
+offset_right = 469.0
+offset_bottom = 275.0
+theme_override_fonts/font = SubResource("SystemFont_7y7xk")
+text = "Jogar"
+
+[node name="Config" type="Button" parent="."]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -15.5
+offset_right = 50.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONFIGURAÇÃO"
+
+[node name="Sair" type="Button" parent="."]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = 24.5
+offset_right = 67.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SAIR"
