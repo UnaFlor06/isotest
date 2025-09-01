@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var prox_cena = 1
+var prox_cena = 0
 @onready var Pause_cena = preload("res://Cenas/pause_menu.tscn")
 var instancia
 

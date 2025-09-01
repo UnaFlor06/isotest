@@ -11,8 +11,6 @@ var cameraOn = false
 @onready var cam: Camera2D = $Player/Camera2D
 	
 func _ready():
-	
-	
 	if cameraOn:
 		cam.zoom = Vector2(3.5, 3.5)
 		player.add_child(cam)
@@ -23,7 +21,8 @@ func _ready():
 		cam.zoom = Vector2(1.75,1.75)
 		player.add_child(cam)
 		cam.make_current()
-		player.habilitar_controles()
+	
+	player.habilitar_controles()
 	
 func zoom_out():
 	var tween = create_tween()
