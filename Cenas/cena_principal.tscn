@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://oixfveu3laly"]
 
 [ext_resource type="Script" uid="uid://cgt8k12i2tudm" path="res://Cenas/Scripts/Camera.gd" id="1_r8678"]
-[ext_resource type="PackedScene" uid="uid://cy2mp0etf8tgn" path="res://Cenas/Playerteste.tscn" id="2_q4qsu"]
+[ext_resource type="PackedScene" uid="uid://cy2mp0etf8tgn" path="res://Cenas/Player.tscn" id="2_q4qsu"]
 [ext_resource type="PackedScene" uid="uid://iwt5atomkn40" path="res://Cenas/mapa1.tscn" id="4_r8678"]
 [ext_resource type="PackedScene" uid="uid://dn4xj6ohgbrmg" path="res://Cenas/pause_menu.tscn" id="5_tgbm0"]
 [ext_resource type="PackedScene" uid="uid://b1lai46s4f8il" path="res://Cenas/bloco_atirador.tscn" id="6_ap3kr"]

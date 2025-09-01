@@ -1,79 +1,102 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqql2wiwevrd0"]
+[gd_scene load_steps=7 format=3 uid="uid://iw4ot757f7n8"]
 
-[ext_resource type="FontFile" uid="uid://d0dot7hqt64c8" path="res://assets/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/connection/Connection.otf" id="1_sgs44"]
+[ext_resource type="FontFile" uid="uid://c4djfkseq3ilc" path="res://Assets/Fontes/fonts/connection_ii/ConnectionII.otf" id="1_7y7xk"]
+[ext_resource type="Script" uid="uid://r1xl7in5bjax" path="res://Cenas/Menu/menu_principal.gd" id="1_w3ops"]
+[ext_resource type="PackedScene" uid="uid://duy2s7b1c6csy" path="res://Cenas/Menu/Botoes/jogar.tscn" id="2_w3ops"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3ops"]
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.759313, 0.586101, 0.27425, 1)
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 0.517647)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sgs44"]
-font = ExtResource("1_sgs44")
-font_size = 64
-font_color = Color(0.529412, 0.290196, 0.788235, 0.909804)
-outline_size = 5
+font = ExtResource("1_7y7xk")
+font_size = 75
+font_color = Color(0.96399, 0.947313, 0.992976, 0.909804)
 outline_color = Color(0.118581, 0.118581, 0.118581, 1)
 shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.568627)
+shadow_offset = Vector2(5.755, 2)
 
-[sub_resource type="SystemFont" id="SystemFont_7y7xk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y7xk"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0, 0, 0, 0.298039)
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
-[node name="Control" type="Control"]
+[node name="Control" type="TextureRect"]
+process_mode = 3
 texture_filter = 1
-layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+script = ExtResource("1_w3ops")
 
-[node name="Label" type="Label" parent="."]
+[node name="tela" type="MarginContainer" parent="."]
+process_mode = 3
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -223.5
-offset_top = 60.0
-offset_right = 223.5
-offset_bottom = 125.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 115
+
+[node name="Logo" type="PanelContainer" parent="tela"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3ops")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="tela/Logo"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="tela/Logo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "NOME DO JOGO"
 label_settings = SubResource("LabelSettings_sgs44")
 
-[node name="Jogar" type="Button" parent="."]
-texture_filter = 1
-custom_minimum_size = Vector2(135, 0)
-layout_mode = 0
-offset_left = 334.0
-offset_top = 244.0
-offset_right = 469.0
-offset_bottom = 275.0
-theme_override_fonts/font = SubResource("SystemFont_7y7xk")
+[node name="Botoes" type="PanelContainer" parent="tela"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7y7xk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="tela/Botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Jogar" parent="tela/Botoes/VBoxContainer" instance=ExtResource("2_w3ops")]
+layout_mode = 2
 text = "Jogar"
 
-[node name="Config" type="Button" parent="."]
-custom_minimum_size = Vector2(135, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -15.5
-offset_right = 50.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "CONFIGURAÇÃO"
+[node name="Opcao" parent="tela/Botoes/VBoxContainer" instance=ExtResource("2_w3ops")]
+layout_mode = 2
+text = "Configuração"
 
-[node name="Sair" type="Button" parent="."]
-custom_minimum_size = Vector2(135, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = 24.5
-offset_right = 67.5
-offset_bottom = 55.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "SAIR"
+[node name="Sair" parent="tela/Botoes/VBoxContainer" instance=ExtResource("2_w3ops")]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="pressed" from="tela/Botoes/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="tela/Botoes/VBoxContainer/Opcao" to="." method="_on_opcao_pressed"]
+[connection signal="pressed" from="tela/Botoes/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

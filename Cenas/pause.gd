@@ -32,4 +32,5 @@ func _on_configuração_pressed() -> void:
 	visible = false
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Cenas/MenuPrincipal.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Cenas/Menu/MenuPrincipal.tscn")
