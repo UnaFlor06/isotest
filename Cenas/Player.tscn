@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://42u6dh350k13" path="res://Assets/Animacoes_Player/RUN/run_up.png" id="17_wgblk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g65w6"]
-radius = 7.5
-height = 22.0
+radius = 6.0
+height = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmi1p"]
 atlas = ExtResource("2_g65w6")
@@ -924,7 +924,7 @@ script = ExtResource("1_lyuh3")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-0.5, -15)
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_g65w6")
 
 [node name="Animacao" type="AnimatedSprite2D" parent="."]

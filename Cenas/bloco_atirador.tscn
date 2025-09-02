@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b1lai46s4f8il"]
 
 [ext_resource type="Script" uid="uid://b232spns30745" path="res://Cenas/Scripts/bloco_atirador.gd" id="1_oinx2"]
-[ext_resource type="Texture2D" uid="uid://pj4tfvfg6d1d" path="res://assets/projetil/torre.png" id="3_7tyho"]
+[ext_resource type="Texture2D" uid="uid://pj4tfvfg6d1d" path="res://Assets/projetil/torre.png" id="3_7tyho"]
 [ext_resource type="PackedScene" uid="uid://ug6w6u7thsxo" path="res://Cenas/Bullet.tscn" id="3_kgxqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oinx2"]

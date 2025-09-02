@@ -20,7 +20,7 @@ motion_mode = 1
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_q4qsu")]
 z_index = 1
-position = Vector2(-214, 417)
+position = Vector2(280, 424)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, -17)
