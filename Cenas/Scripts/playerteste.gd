@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 250.0
 @onready var anim = $Animacao
+@export var hitbox_cena: PackedScene
 
 var bussola= Vector2(0,1)
 var z := 0
@@ -35,21 +36,35 @@ func _physics_process(delta: float) -> void:
 	
 	if not atq and mouse_click:
 		atq = true
+		var distancia = 30
+		var hitbox
+		hitbox = hitbox_cena.instantiate()
 		
 		if abs(to_mouse.x) > abs(to_mouse.y):
 			if to_mouse.x > 0:
 				anim.play("Attack_right")
+				hitbox.get_node("right").visible = true
 			else:
 				anim.play("Attack_left")
+				hitbox.get_node("left").visible = true
 		else:
 			if to_mouse.y > 0:
 				anim.play("Attack_down")
+				hitbox.get_node("down").visible = true
 			else:
 				anim.play("Attack_up")
+				hitbox.get_node("up").visible = true
+		
 		velocity = Vector2.ZERO
 		move_and_slide()
 		
+		hitbox.global_position = global_position + to_mouse * distancia
+		get_parent().add_child(hitbox)
+		
 		await get_tree().create_timer(attack_time).timeout
+		if hitbox and hitbox.is_inside_tree():
+			hitbox.queue_free()
+		
 		atq = false
 		return
 		

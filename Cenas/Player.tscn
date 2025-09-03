@@ -1,7 +1,8 @@
-[gd_scene load_steps=136 format=3 uid="uid://cy2mp0etf8tgn"]
+[gd_scene load_steps=137 format=3 uid="uid://cy2mp0etf8tgn"]
 
 [ext_resource type="Script" uid="uid://cfvfxrn0ubkh4" path="res://Cenas/Scripts/playerteste.gd" id="1_lyuh3"]
 [ext_resource type="Texture2D" uid="uid://b7oroewx27m5b" path="res://Assets/ATTACK 1/attack1_down.png" id="2_g65w6"]
+[ext_resource type="PackedScene" uid="uid://bg0h2wj1cps70" path="res://Cenas/Scripts/hitbox.tscn" id="2_necjj"]
 [ext_resource type="Texture2D" uid="uid://xrxu74u358t5" path="res://Assets/ATTACK 1/attack1_left.png" id="3_ohjpv"]
 [ext_resource type="Texture2D" uid="uid://d1uxatlva5x51" path="res://Assets/ATTACK 1/attack1_right.png" id="4_kdarh"]
 [ext_resource type="Texture2D" uid="uid://d23uf37yoojte" path="res://Assets/ATTACK 1/attack1_up.png" id="5_kx3ka"]
@@ -921,6 +922,7 @@ animations = [{
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_lyuh3")
+hitbox_cena = ExtResource("2_necjj")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -932,4 +934,6 @@ texture_filter = 1
 position = Vector2(0, -20)
 scale = Vector2(1.625, 1.28282)
 sprite_frames = SubResource("SpriteFrames_lyuh3")
-animation = &"idle_down"
+animation = &"Attack_right"
+frame = 1
+frame_progress = 0.31319
