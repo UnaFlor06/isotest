@@ -7,16 +7,19 @@ var pode_atirar = true
 
 func _process(delta):
 	anim.play("default")
-	if anim.frame == 6:
+	if anim.frame == 6 and pode_atirar:
 		atirar()
 		pode_atirar = false
+
+	if anim.frame == 0:
+		pode_atirar = true
 
 func atirar():
 	if not cena_projetil:
 		return
 
 	var novo_projetil = cena_projetil.instantiate()
-	novo_projetil.position = $PontoDeDisparo.global_position
+	novo_projetil.global_position = $PontoDeDisparo.global_position
 	get_parent().add_child(novo_projetil)
 	remover_projetil(novo_projetil)
 

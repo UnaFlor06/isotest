@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://cy2mp0etf8tgn"]
+[gd_scene load_steps=138 format=3 uid="uid://cy2mp0etf8tgn"]
 
 [ext_resource type="Script" uid="uid://cfvfxrn0ubkh4" path="res://Cenas/Scripts/playerteste.gd" id="1_lyuh3"]
 [ext_resource type="Texture2D" uid="uid://b7oroewx27m5b" path="res://Assets/ATTACK 1/attack1_down.png" id="2_g65w6"]
@@ -18,10 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cpj8ynxtlgxmu" path="res://Assets/Animacoes_Player/RUN/run_left.png" id="15_jxhx4"]
 [ext_resource type="Texture2D" uid="uid://8jlyrv2btr3h" path="res://Assets/Animacoes_Player/RUN/run_right.png" id="16_betty"]
 [ext_resource type="Texture2D" uid="uid://42u6dh350k13" path="res://Assets/Animacoes_Player/RUN/run_up.png" id="17_wgblk"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g65w6"]
-radius = 6.0
-height = 12.0
+[ext_resource type="Script" uid="uid://b8ci763q7otxd" path="res://Cenas/Scripts/area_2d.gd" id="19_apxsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmi1p"]
 atlas = ExtResource("2_g65w6")
@@ -918,22 +915,31 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g65w6"]
+radius = 6.0
+height = 12.0
+
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_lyuh3")
 hitbox_cena = ExtResource("2_necjj")
 
-[node name="collision" type="CollisionShape2D" parent="."]
-z_index = 1
-position = Vector2(0, -5)
-shape = SubResource("CapsuleShape2D_g65w6")
-
 [node name="Animacao" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -20)
 scale = Vector2(1.625, 1.28282)
 sprite_frames = SubResource("SpriteFrames_lyuh3")
-animation = &"Attack_right"
-frame = 1
-frame_progress = 0.31319
+animation = &"idle_down"
+frame = 5
+frame_progress = 0.882224
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("19_apxsp")
+
+[node name="collision" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_g65w6")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
